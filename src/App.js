@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Screen from './components/screen';
 
@@ -19,6 +18,11 @@ const livecameraIds = [
   "-K3sU_ObuIA",
   "S581fbJPqgc",
   "53AsLrecIS8",
+  "m7W5jYfIRNo", // 十勝川白鳥大橋ライブカメラ（十勝川温泉第一ホテル屋上より
+  "qHJMkze8lPg", // 東京駅丸の内口 ライブカメラ
+  "P1DRWEdRjtQ", // 夜景がきれい！あべのハルカス・通天閣/OSAKA NIGHT VEW
+  "FuuyEK-Vkuo", // 宮古島 天気カメラ ライブ配信（OTV沖縄テレビ）
+  "qHJMkze8lPg", // 東京駅丸の内口 ライブカメラ
 ]
 
 function getRandomInt(min, max) {
