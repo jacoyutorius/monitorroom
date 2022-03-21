@@ -12,7 +12,7 @@ const Screen = props => {
         width={props.width}
         height={props.height}
         src={src}
-        frameborder="0"
+        frameBorder="0"
         fs="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
       </iframe>
