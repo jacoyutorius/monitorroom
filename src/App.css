@@ -7,3 +7,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.screen {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.screen > .controls {
+  position: absolute;
+  margin: 1rem 10px;
+}
