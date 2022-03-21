@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactlivecamera-dev-140830-authRole",
+      "UnauthRoleArn": "arn:aws:iam::865422985541:role/amplify-reactlivecamera-dev-140830-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::865422985541:role/amplify-reactlivecamera-dev-140830-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactlivecamera-dev-140830-deployment",
+      "UnauthRoleName": "amplify-reactlivecamera-dev-140830-unauthRole",
+      "StackName": "amplify-reactlivecamera-dev-140830",
+      "StackId": "arn:aws:cloudformation:us-east-1:865422985541:stack/amplify-reactlivecamera-dev-140830/6658dc70-a920-11ec-994f-1271e9df76bf",
+      "AmplifyAppId": "d1ydnekrdsqj0x"
+    }
+  }
+}
