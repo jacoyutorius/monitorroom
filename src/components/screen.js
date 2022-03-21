@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRotate } from "@fortawesome/free-solid-svg-icons";
 
 const Screen = props => {
   const initialState = props.youtube_id;
@@ -17,7 +19,9 @@ const Screen = props => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
       </iframe>
       <div className="controls">
-        <button onClick={changeChannel}>reload</button>
+        <button class="control-button" onClick={changeChannel}>
+          <FontAwesomeIcon icon={faRotate} />
+        </button>
       </div>
     </div>
   );

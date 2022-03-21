@@ -16,5 +16,21 @@
 
 .screen > .controls {
   position: absolute;
-  margin: 1rem 10px;
+  padding: 30px;
+}
+
+.screen > .controls:hover{
+  background-color: #000000ad;
+}
+
+button.control-button {
+  background-color: #ffffff00;
+  border-style: none;
+  color: #ffffff1f;
+  font-size: 26px;
+}
+
+button.control-button:hover {
+  font-size: 28px;
+  color: white;
 }
