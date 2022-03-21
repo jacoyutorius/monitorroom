@@ -46,11 +46,19 @@ function App() {
     return array;
   }
 
+  function getNextChannel() {
+    return livecameraIds.shuffle()[0];
+  }
+
   const width = window.outerWidth / 3;
   const height = window.outerHeight / 3;
   const monitors = [...Array(screenCount)].map((_, i) => livecameraIds[getRandomInt(0, 9)])
-                                .shuffle()
-                                .map(id => (<Screen width={width} height={height} youtube_id={id} />));
+                                          .shuffle()
+                                          .map(id => (<Screen width={width}
+                                                              height={height}
+                                                              youtube_id={id}
+                                                              getNextChannel={getNextChannel} />
+                                                      ));
 
   return (
     <div className="App">

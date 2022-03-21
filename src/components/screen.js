@@ -1,10 +1,10 @@
-function Screen(props) {
-  const src = `https://www.youtube.com/embed/${props.youtube_id}?autoplay=1&mute=1&playsinline=1&loop=1&controls=0&playlist=${props.youtube_id}`;
+import React, { useState } from "react";
 
-  const handleReload = e => {
-    e.preventDefault();
-    alert("!!");
-  }
+const Screen = props => {
+  const initialState = props.youtube_id;
+  const [channel, setchannel] = useState(initialState);
+  const changeChannel = () => (setchannel(props.getNextChannel()));   
+  const src = `https://www.youtube.com/embed/${channel}?autoplay=1&mute=1&playsinline=1&loop=1&controls=0&playlist=${channel}`;
 
   return (
     <div className="screen">
@@ -17,7 +17,7 @@ function Screen(props) {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
       </iframe>
       <div className="controls">
-        <button onClick={handleReload}>reload</button>
+        <button onClick={changeChannel}>reload</button>
       </div>
     </div>
   );
