@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import './App.css';
 import Screen from './components/screen';
 
@@ -38,16 +37,7 @@ const livecameraIds = [
   "wqCswzEsNVA", // 新大阪ライブカメラ（Sin-Osaka Cam）HD
 ]
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
 function App() {
-  const screenCount = 9;
-
   Array.prototype.shuffle = function() {
     const array = [...this];
    
@@ -65,8 +55,10 @@ function App() {
 
   const width = window.outerWidth / 3;
   const height = window.outerHeight / 3;
-  const monitors = [...Array(screenCount)].map((_, i) => livecameraIds[getRandomInt(0, 9)])
-                                          .shuffle()
+
+  const ids = livecameraIds.shuffle();
+  const screenCount = 9;
+  const monitors = [...Array(screenCount)].map((_, i) => ids.shift())
                                           .map((id, i) => (<Screen key={i}
                                                               width={width}
                                                               height={height}
