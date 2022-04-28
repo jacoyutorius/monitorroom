@@ -11,7 +11,6 @@ const livecameraIds = [
   "F3R97syoK40", // ４Ｋライブカメラ　レインボーブリッジと東京タワー、お台場東京。４Ｋライブ配信。羽田空港の飛行機。お天気カメラお台場東京
   "9Bq76emgglg",
   "jnuacQgCEEA",
-  "I4vmQ8x4yM4",
   "Kn4sf1nJXCU",
   "2d0yO_QN1Iw",
   "Azbdr5jbN6o",
@@ -21,20 +20,24 @@ const livecameraIds = [
   "53AsLrecIS8",
   "m7W5jYfIRNo", // 十勝川白鳥大橋ライブカメラ（十勝川温泉第一ホテル屋上より
   "qHJMkze8lPg", // 東京駅丸の内口 ライブカメラ
-  "P1DRWEdRjtQ", // 夜景がきれい！あべのハルカス・通天閣/OSAKA NIGHT VEW
   "FuuyEK-Vkuo", // 宮古島 天気カメラ ライブ配信（OTV沖縄テレビ）
   "qHJMkze8lPg", // 東京駅丸の内口 ライブカメラ
   "GA7WO_XD_3w", // [生中継] 明石海峡大橋ライブカメラ Akashi-Kaikyo Bridge 4K LIVE Camera Archive [3/21朝] 神戸淡路鳴門自動車道 大阪湾 淡路島 アーカイブ
   "0J7kRtEfwmU", // 湘南ライブカメラ鎌倉
   "qGy19eyEg7M", // 【LIVE】福岡空港ライブカメラ 2022-03-21 13:20-25:15 Fukuoka Japan Airport Live Camera
-  "fC3MiylRabk", // 明石海峡大橋夕焼けライブカメラ
-  "AfZQIxX_nQE", // 【LIVE】サンシャイン60通りライブカメラ：Tokyo City Live Camera ikebukuro
   "Ye5a2m4mhKc", // 【LIVE】沖縄県・国際通り方面ライブカメラ【琉球新報】
-  "NGflxiA9A0o", // 【LIVE】 大阪　心斎橋ライブカメラ　OSAKA SHINSAIBASHI LIVE CAMERA　大丸心斎橋北側です。待ち合わせの確認にも！
-  "esX3U1xiOdA", // ディズニー花火【舞浜ライブカメラ / 24時間ライブ配信】噴火・航空機・富士山 LIVE　
-  "KikoI23I9lQ", // 横浜汽車道ライブカメラ２ /Yokohama Live Camera ２
-  "nySbZ93Od6U", // 【Live-Japan】函館駅前ライブカメラ②・摩周丸・函館湾・お天気カメラ・Hakodate Hokkaido Live Camera
-  "wqCswzEsNVA", // 新大阪ライブカメラ（Sin-Osaka Cam）HD
+  "AmqmrrgBB2o", // 【LIVE】サンシャイン60通りライブカメラ：Tokyo City Live Camera ikebukuro
+  "DjdUEyjx8GM", // 【 LIVE 】東京都 新宿 歌舞伎町 24時間 ライブ / Tokyo Shinjuku Kabukicho Live
+  "MwEG6LEbbkw", // 【ライブ】東名高速・厚木IC付近　GW道路状況LIVE配信カメラ【ANN/テレ朝】
+  "uKaJZR5CRtA", // [生中継] 明石海峡大橋ライブカメラ4K [4/29] Akashi-Kaikyo Bridge LIVE Camera Archive 神戸淡路鳴門自動車道 大阪湾 淡路島 アーカイブ
+  "CE14EKMwZsc", // 【LIVE】大阪 道頓堀 ライブカメラ osaka Dotonbori Livecamera
+  "3CmwLOgQxIY", // 【LIVE】東京・新宿駅前ライブカメラ Shinjuku, Tokyo JAPAN | TBS NEWS DIG
+  "nWB0ZnYfO6I", // 富士芝桜まつりライブカメラ / Live Camera Fuji Shiba-sakura Festival
+  "D84yopCfGtM", // 南アルプスライブカメラ
+  "Iv2VUE_UhRQ", // [4K] 上高地河童橋ライブカメラ KAMIKOCHI KAPPA-BASHI LIVE CAMERA
+  "K9lbv08KMc0", // 善光寺LIVEカメラ（INC長野ケーブルテレビ）
+  "2j5xID8L4Vw", // 【Live-Japan】函館駅前ライブカメラ①・函館湾・摩周丸・お天気カメラ・Hakodate Hokkaido Live Camera
+  "9wmH7B-fl-c", // 【Live-Japan】函館駅前ライブカメラ②・摩周丸・函館湾・お天気カメラ・Hakodate Hokkaido Live Camera
 ]
 
 function App() {
