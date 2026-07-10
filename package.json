@@ -7,7 +7,8 @@
     "start": "vite --host 0.0.0.0 --port 3000",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
-    "test": "vitest run"
+    "test": "vitest run",
+    "refresh:cameras": "node scripts/refresh-live-cameras.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.0",
