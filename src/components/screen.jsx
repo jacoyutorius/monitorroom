@@ -12,9 +12,7 @@ const Screen = props => {
 
   return (
     <div className="screen">
-      <iframe 
-        width={props.width}
-        height={props.height}
+      <iframe
         src={src}
         title={camera.title}
         frameBorder="0"

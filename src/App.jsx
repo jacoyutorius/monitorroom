@@ -22,15 +22,11 @@ function App() {
     return shuffle(candidates)[0];
   }
 
-  const width = window.outerWidth / 3;
-  const height = window.outerHeight / 3;
   const screenCount = 9;
   const cameras = shuffle(liveCameras).slice(0, screenCount);
   const monitors = cameras.map((camera) => (
     <Screen
-      key={camera.id}
-      width={width}
-      height={height}
+      key={getCameraIdentity(camera)}
       camera={camera}
       getNextChannel={getNextChannel}
     />
