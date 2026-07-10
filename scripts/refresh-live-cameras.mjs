@@ -4,21 +4,40 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dataPath = path.resolve(__dirname, '../src/liveCameras.json');
-const watchUrlPattern = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})/;
-const canonicalPattern = /<link rel="canonical" href="https:\/\/www\.youtube\.com\/watch\?v=([\w-]{11})"/;
-const ogUrlPattern = /<meta property="og:url" content="https:\/\/www\.youtube\.com\/watch\?v=([\w-]{11})"/;
-const videoIdPattern = /"videoId":"([\w-]{11})"/;
+const canonicalPattern =
+  /<link rel="canonical" href="https:\/\/www\.youtube\.com\/watch\?v=([\w-]{11})"/;
+const ogUrlPattern =
+  /<meta property="og:url" content="https:\/\/www\.youtube\.com\/watch\?v=([\w-]{11})"/;
 
 function getTodayString() {
   return new Date().toISOString().slice(0, 10);
 }
 
-function extractVideoId(text) {
+function extractWatchVideoIdFromUrl(url) {
+  try {
+    const parsed = new URL(url);
+
+    if (
+      parsed.hostname.includes('youtube.com') &&
+      parsed.pathname === '/watch'
+    ) {
+      return parsed.searchParams.get('v');
+    }
+
+    if (parsed.hostname === 'youtu.be') {
+      return parsed.pathname.slice(1) || null;
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function extractWatchVideoIdFromHtml(text) {
   return (
-    text.match(watchUrlPattern)?.[1] ??
     text.match(canonicalPattern)?.[1] ??
     text.match(ogUrlPattern)?.[1] ??
-    text.match(videoIdPattern)?.[1] ??
     null
   );
 }
@@ -38,8 +57,8 @@ async function resolveLiveVideo(camera) {
 
   const body = await response.text();
   const resolvedVideoId =
-    extractVideoId(response.url) ??
-    extractVideoId(body);
+    extractWatchVideoIdFromUrl(response.url) ??
+    extractWatchVideoIdFromHtml(body);
 
   return {
     ok: response.ok && Boolean(resolvedVideoId),
