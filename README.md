@@ -26,3 +26,5 @@ npm run refresh:cameras
 
 `src/liveCameras.json` にライブカメラ一覧を持ってる。
 YouTube の配信IDは変わることがあるから、`npm run refresh:cameras` で `channelUrl/live` から最新の `videoId` を引き直せる。
+
+`.github/workflows/refresh-live-cameras.yml` で GitHub Actions からも同じ更新処理を実行していて、6時間ごとに自動更新する。

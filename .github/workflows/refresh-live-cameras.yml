@@ -1,0 +1,56 @@
+name: Refresh Live Cameras
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-live-cameras
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh live camera ids
+        run: npm run refresh:cameras
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet -- src/liveCameras.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit updated camera ids
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/liveCameras.json
+          git commit -m $'ライブカメラの配信IDを更新\n\n- GitHub Actions から refresh:cameras を実行\n- channelUrl から最新の videoId を取得して反映'
+
+      - name: Push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: git push origin HEAD:master
