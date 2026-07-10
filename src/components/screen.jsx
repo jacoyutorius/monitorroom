@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotate } from "@fortawesome/free-solid-svg-icons";
 import { getCurrentVideoId, getEmbedUrl } from '../liveCameras';
 
 const Screen = props => {
-  const [camera, setCamera] = useState(props.camera);
+  const { camera, onChangeChannel } = props;
   const videoId = getCurrentVideoId(camera);
-
-  const changeChannel = () => setCamera(props.getNextChannel(camera));
   const src = getEmbedUrl(videoId);
 
   return (
@@ -23,7 +21,7 @@ const Screen = props => {
         <button
           className="control-button"
           type="button"
-          onClick={changeChannel}
+          onClick={onChangeChannel}
           aria-label={`${camera.title}を切り替え`}
         >
           <FontAwesomeIcon icon={faRotate} />
