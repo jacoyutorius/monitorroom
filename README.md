@@ -9,5 +9,14 @@ https://monitorroom.jacoyutorius.net/
 
 ```
 npm install
-npm run start
+npm run dev
+```
+
+## scripts
+
+```
+npm run dev
+npm run build
+npm run preview
+npm run test
 ```

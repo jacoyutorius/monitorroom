@@ -14,12 +14,13 @@ const Screen = props => {
         width={props.width}
         height={props.height}
         src={src}
+        title={`Live camera ${channel}`}
         frameBorder="0"
         fs="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
       </iframe>
       <div className="controls">
-        <button class="control-button" onClick={changeChannel}>
+        <button className="control-button" type="button" onClick={changeChannel}>
           <FontAwesomeIcon icon={faRotate} />
         </button>
       </div>
