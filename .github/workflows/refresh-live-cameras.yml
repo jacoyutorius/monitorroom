@@ -53,4 +53,4 @@ jobs:
 
       - name: Push changes
         if: steps.changes.outputs.changed == 'true'
-        run: git push origin HEAD:master
+        run: git push origin HEAD:main
